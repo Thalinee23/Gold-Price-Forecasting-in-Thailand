@@ -1,4 +1,3 @@
-# Gold Price Forecasting in Thailand
 # โปรเจกต์วิเคราะห์และคาดการณ์ราคาทองคำในประเทศไทย (Gold Price Forecasting in Thailand)
 
 โปรเจกต์นี้เป็นการนำเทคนิค Data Science มาใช้ในการวิเคราะห์ปัจจัยทางเศรษฐกิจที่มีผลกระทบต่อราคาทองคำในประเทศไทย (ข้อมูลรายเดือน ตั้งแต่ปี 2014 - 2023 รวม 120 ชุด) เพื่อสร้างโมเดลพยากรณ์ราคาทองคำ
@@ -60,30 +59,30 @@
 
 # Gold Price Forecasting in Thailand
 
-A data science and machine learning project to analyze economic factors impacting gold prices in Thailand and compare the forecasting performance of statistical and machine learning models (Monthly Data, 2014 - 2023, 120 samples)[cite: 1].
+A data science and machine learning project to analyze economic factors impacting gold prices in Thailand and compare the forecasting performance of statistical and machine learning models (Monthly Data, 2014 - 2023, 120 samples)
 
 ## Dataset & Variables
-* **Target Variable:** Gold Bar Price in Thailand (GPT(THB))[cite: 1]
-* **Predictor Variables (Features):** Global Gold Price (GPW(USD)), Consumer Price Index (CPI), Policy Interest Rate (IR), Global Crude Oil Price (POIL(USD)), Exchange Rate (EXR)[cite: 1]
+* **Target Variable:** Gold Bar Price in Thailand (GPT(THB))
+* **Predictor Variables (Features):** Global Gold Price (GPW(USD)), Consumer Price Index (CPI), Policy Interest Rate (IR), Global Crude Oil Price (POIL(USD)), Exchange Rate (EXR)
 
 ---
 
 ## Methodology & Statistical Analysis
 
 ### 1. Feature Selection
-Applied **Stepwise Regression** to select features with the highest statistical significance. The final model retains 3 key variables: **Global Gold Price (GPW(USD)), Exchange Rate (EXR), and Consumer Price Index (CPI)**[cite: 1].
+Applied **Stepwise Regression** to select features with the highest statistical significance. The final model retains 3 key variables: **Global Gold Price (GPW(USD)), Exchange Rate (EXR), and Consumer Price Index (CPI)**
 
 ### 2. Statistical Assumption Checking
 The final Linear Regression model strictly satisfies all classical linear regression assumptions:
-* **Multicollinearity (VIF):** The VIF for all selected features ranges between 1.64 and 3.77, which is **well below the threshold of 5** (No multicollinearity issues)[cite: 1].
-* **Autocorrelation (Durbin-Watson):** The Durbin-Watson statistic is **2.186** (and 2.026 in the validation phase), confirming **no significant autocorrelation in the residuals**[cite: 1].
-* **Normality of Residuals:** The Shapiro-Wilk Test yielded a p-value of 0.537 (> 0.05), indicating that the residuals are **normally distributed**[cite: 1].
+* **Multicollinearity (VIF):** The VIF for all selected features ranges between 1.64 and 3.77, which is **well below the threshold of 5** (No multicollinearity issues)
+* **Autocorrelation (Durbin-Watson):** The Durbin-Watson statistic is **2.186** (and 2.026 in the validation phase), confirming **no significant autocorrelation in the residuals**
+* **Normality of Residuals:** The Shapiro-Wilk Test yielded a p-value of 0.537 (> 0.05), indicating that the residuals are **normally distributed**
 
 ---
 
 ## Model Evaluation & Performance
 
-The forecasting models are evaluated and ranked by their **Mean Squared Error (MSE)** on the test set (from lowest to highest)[cite: 1].
+The forecasting models are evaluated and ranked by their **Mean Squared Error (MSE)** on the test set (from lowest to highest)
 
 | Rank | Model | MSE (Mean Squared Error) |
 | :---: | :--- | :---: |
@@ -94,12 +93,12 @@ The forecasting models are evaluated and ranked by their **Mean Squared Error (M
 | 5 | ARIMA (Time Series) | 49,236,132.33 |
 
 ### Conclusion
-* **Best Model:** **Linear Regression** outperformed all other models, achieving the lowest MSE[cite: 1] and an outstanding **R-squared of 0.994** (explaining 99.4% of the variance in Thai gold prices)[cite: 1].
-* **Key Insights:** By selecting features via Stepwise Regression and ensuring all statistical assumptions were met, the linear model accurately captured the strong, linear relationships between global gold prices, exchange rates, and local prices without overfitting[cite: 1]. Residual errors still persist due to the exclusion of external event-driven variables, such as wars, pandemics, or macroeconomic crises, which highly fluctuate financial markets[cite: 1].
+* **Best Model:** **Linear Regression** outperformed all other models, achieving the lowest MSE and an outstanding **R-squared of 0.994** (explaining 99.4% of the variance in Thai gold prices)
+* **Key Insights:** By selecting features via Stepwise Regression and ensuring all statistical assumptions were met, the linear model accurately captured the strong, linear relationships between global gold prices, exchange rates, and local prices without overfitting Residual errors still persist due to the exclusion of external event-driven variables, such as wars, pandemics, or macroeconomic crises, which highly fluctuate financial markets.
 
 ---
 
 ## Tech Stack & Tools
-* **Language:** Python[cite: 1]
-* **Libraries:** Pandas, NumPy, Scikit-learn, Statsmodels, Seaborn, Matplotlib, SciPy[cite: 1]
-* **Statistical Techniques:** Stepwise Regression, VIF, Durbin-Watson Test, Shapiro-Wilk Test, StandardScaler[cite: 1]
+* **Language:** Python
+* **Libraries:** Pandas, NumPy, Scikit-learn, Statsmodels, Seaborn, Matplotlib, SciPy
+* **Statistical Techniques:** Stepwise Regression, VIF, Durbin-Watson Test, Shapiro-Wilk Test, StandardScaler
